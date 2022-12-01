@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\LoginController;
+use Illuminate\Support\Facades\DB;
 
 /*
 |--------------------------------------------------------------------------
@@ -19,7 +20,12 @@ Route::get('/', function () {
 });
 
 Route::get('/dashboard', function () {
-    return view('dashboard');
+    $matD = DB::table('mat_d_materialstock')->get();
+    $oprLayak = DB::table('cpl_oprlayak')->get();
+    return view('dashboard',  [
+        'matD' => $matD,
+        'oprLayak' => $oprLayak,
+    ]);
 });
 
 Route::get('/login', [LoginController::class, 'index'])->name('login')->middleware('guest');

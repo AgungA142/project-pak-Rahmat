@@ -105,54 +105,87 @@
           </div>
           <!--Table-->
           <div class="px-4 sm:px-6 lg:px-8">
+
             <div class="sm:flex sm:items-center">
               <div class="sm:flex-auto">
-                <h1 class="text-xl font-semibold text-gray-900">mat D</h1>
+                <h1 class="text-xl font-semibold text-gray-900">OPR Layak</h1>
                 <p class="mt-2 text-sm text-gray-700">A list of all the users in your account including their name,
                   title, email and role.</p>
-              </div>
-              <div class="mt-4 sm:mt-0 sm:ml-16 sm:flex-none">
-                <button type="button"
-                  class="inline-flex items-center justify-center rounded-md border border-transparent bg-indigo-600 px-4 py-2 text-sm font-medium text-white shadow-sm hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 sm:w-auto">Tambah
-                  Barang</button>
               </div>
             </div>
             <div
               class="-mx-4 mt-8 overflow-hidden shadow ring-1 ring-black ring-opacity-5 sm:-mx-6 md:mx-0 md:rounded-lg">
               <table class="min-w-full divide-y divide-gray-300">
                 <thead class="bg-gray-50">
+                  
                   <tr>
-                    <th scope="col" class="py-3.5 pl-4 pr-3 text-left text-sm font-semibold text-gray-900 sm:pl-6">Name
+                    <th scope="col" class="py-3.5 pl-4 pr-3 text-left text-sm font-semibold text-gray-900 sm:pl-6">Stasiun Kerja
                     </th>
                     <th scope="col"
-                      class="hidden px-3 py-3.5 text-left text-sm font-semibold text-gray-900 sm:table-cell">Title</th>
+                      class="hidden px-3 py-3.5 text-left text-sm font-semibold text-gray-900 sm:table-cell">Rencana Mulai</th>
                     <th scope="col"
-                      class="hidden px-3 py-3.5 text-left text-sm font-semibold text-gray-900 lg:table-cell">Email</th>
-                    <th scope="col" class="px-3 py-3.5 text-left text-sm font-semibold text-gray-900">Role</th>
-                    <th scope="col" class="relative py-3.5 pl-3 pr-4 sm:pr-6">
-                      <span class="sr-only">Edit</span>
-                    </th>
+                      class="hidden px-3 py-3.5 text-left text-sm font-semibold text-gray-900 lg:table-cell">Rencana Selesai</th>
+                    <th scope="col" class="px-3 py-3.5 text-left text-sm font-semibold text-gray-900">Mulai</th>
+                    <th scope="col" class="px-3 py-3.5 text-left text-sm font-semibold text-gray-900">Selesai</th>
+                    <th scope="col" class="px-3 py-3.5 text-left text-sm font-semibold text-gray-900">Nama</th>
                   </tr>
                 </thead>
                 <tbody class="divide-y divide-gray-200 bg-white">
+                  @foreach($oprLayak as $opr)
                   <tr>
-                    <td class="whitespace-nowrap py-4 pl-4 pr-3 text-sm font-medium text-gray-900 sm:pl-6">Lindsay
-                      Walton</td>
-                    <td class="hidden whitespace-nowrap px-3 py-4 text-sm text-gray-500 sm:table-cell">Front-end
-                      Developer</td>
-                    <td class="hidden whitespace-nowrap px-3 py-4 text-sm text-gray-500 lg:table-cell">
-                      lindsay.walton@example.com</td>
-                    <td class="whitespace-nowrap px-3 py-4 text-sm text-gray-500">Member</td>
-                    <td class="whitespace-nowrap py-4 pl-3 pr-4 text-right text-sm font-medium sm:pr-6">
-                      <a href="#" class="text-indigo-600 hover:text-indigo-900">Edit<span class="sr-only">, Lindsay
-                          Walton</span></a>
-                    </td>
+                    <td class="whitespace-nowrap py-4 pl-4 pr-3 text-sm font-medium text-gray-900 sm:pl-6">{{ $opr->stasiunKerja }}</td>
+                    <td class="whitespace-nowrap py-4 pl-4 pr-3 text-sm font-medium text-gray-900 sm:pl-6">{{ $opr->rencanaMulai }}</td>
+                    <td class="whitespace-nowrap py-4 pl-4 pr-3 text-sm font-medium text-gray-900 sm:pl-6">{{ $opr->rencanaSelesai }}</td>
+                    <td class="whitespace-nowrap py-4 pl-4 pr-3 text-sm font-medium text-gray-900 sm:pl-6">{{ $opr->mulai }}</td>
+                    <td class="whitespace-nowrap py-4 pl-4 pr-3 text-sm font-medium text-gray-900 sm:pl-6">{{ $opr->selesai }}</td>
+                    <td class="whitespace-nowrap py-4 pl-4 pr-3 text-sm font-medium text-gray-900 sm:pl-6">{{ $opr->nama }}</td>
                   </tr>
+                  @endforeach
 
                   <!-- More people... -->
                 </tbody>
               </table>
             </div>
+
+            <div class="mt-10 sm:flex sm:items-center">
+              <div class="sm:flex-auto">
+                <h1 class="text-xl font-semibold text-gray-900">mat D</h1>
+                <p class="mt-2 text-sm text-gray-700">A list of all the users in your account including their name,
+                  title, email and role.</p>
+              </div>
+            </div>
+            <div
+              class="-mx-4 mt-8 overflow-hidden shadow ring-1 ring-black ring-opacity-5 sm:-mx-6 md:mx-0 md:rounded-lg">
+              <table class="min-w-full divide-y divide-gray-300">
+                <thead class="bg-gray-50">
+                  
+                  <tr>
+                    <th scope="col" class="py-3.5 pl-4 pr-3 text-left text-sm font-semibold text-gray-900 sm:pl-6">Purchase item
+                    </th>
+                    <th scope="col"
+                      class="hidden px-3 py-3.5 text-left text-sm font-semibold text-gray-900 sm:table-cell">Merk</th>
+                    <th scope="col"
+                      class="hidden px-3 py-3.5 text-left text-sm font-semibold text-gray-900 lg:table-cell">Quantity</th>
+                    <th scope="col" class="px-3 py-3.5 text-left text-sm font-semibold text-gray-900">Unit</th>
+                    <th scope="col" class="px-3 py-3.5 text-left text-sm font-semibold text-gray-900">Arrival Date</th>
+                  </tr>
+                </thead>
+                <tbody class="divide-y divide-gray-200 bg-white">
+                  @foreach($matD as $mat)
+                  <tr>
+                    <td class="whitespace-nowrap py-4 pl-4 pr-3 text-sm font-medium text-gray-900 sm:pl-6">{{ $mat->purchaseItem }}</td>
+                    <td class="whitespace-nowrap py-4 pl-4 pr-3 text-sm font-medium text-gray-900 sm:pl-6">{{ $mat->merk }}</td>
+                    <td class="whitespace-nowrap py-4 pl-4 pr-3 text-sm font-medium text-gray-900 sm:pl-6">{{ $mat->quantity }}</td>
+                    <td class="whitespace-nowrap py-4 pl-4 pr-3 text-sm font-medium text-gray-900 sm:pl-6">{{ $mat->unit }}</td>
+                    <td class="whitespace-nowrap py-4 pl-4 pr-3 text-sm font-medium text-gray-900 sm:pl-6">{{ $mat->arrivalDate }}</td>
+                  </tr>
+                  @endforeach
+
+                  <!-- More people... -->
+                </tbody>
+              </table>
+            </div>
+
           </div>
         </div>
       </div>
