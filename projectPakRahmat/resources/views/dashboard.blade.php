@@ -24,12 +24,13 @@
           </div>
         </div>
       </div>
-
+      <form action="/logout" method="post">
+        @csrf
       <div class="flex flex-col ">
         <button class="rounded-full bg-pink-500 py-2 text-white text-lg">Logout</button>
 
       </div>
-
+    </form>
 
     </div>
 
