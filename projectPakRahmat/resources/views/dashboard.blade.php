@@ -5,9 +5,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   @vite('resources/css/app.css')
 </head>
-<body>
+<body onload="table();">
 
-  <div class="flex flex-row ">
+  <div class="flex flex-row " id="table">
 
 
     <div class="flex flex-col  space-y-5 justify-between min-h-screen w-60 px-2 py-4 bg-gray-50">
@@ -150,24 +150,23 @@
 
             <div class="mt-10 sm:flex sm:items-center">
               <div class="sm:flex-auto">
-                <h1 class="text-xl font-semibold text-gray-900">mat butuh</h1>
+                <h1 class="text-xl font-semibold text-gray-900">mat butuh opr</h1>
                 <p class="mt-2 text-sm text-gray-700">A list of all the users in your account including their name,
                   title, email and role.</p>
               </div>
             </div>
             <div
-              class="-mx-4 mt-8 overflow-hidden shadow ring-1 ring-black ring-opacity-5 sm:-mx-6 md:mx-0 md:rounded-lg">
-              <table class="min-w-full divide-y divide-gray-300">
+              class="-mx-4 mt-8 overflow-hidden shadow ring-1 ring-black ring-opacity-5 sm:-mx-6 md:mx-0 md:rounded-lg" >
+              <table class="min-w-full divide-y divide-gray-300" >
                 <thead class="bg-gray-50">
                   
                   <tr>
-                    <th scope="col" class="py-3.5 pl-4 pr-3 text-left text-sm font-semibold text-gray-900 sm:pl-6">Purchase item
+                    <th scope="col" class="py-3.5 pl-4 pr-3 text-left text-sm font-semibold text-gray-900 sm:pl-6">nama
                     </th>
-                    <th scope="col"
-                      class="hidden px-3 py-3.5 text-left text-sm font-semibold text-gray-900 sm:table-cell">Merk</th>
-                    <th scope="col"
-                      class="hidden px-3 py-3.5 text-left text-sm font-semibold text-gray-900 lg:table-cell">Quantity</th>
-                    <th scope="col" class="px-3 py-3.5 text-left text-sm font-semibold text-gray-900">Unit</th>
+                    <th scope="col" 
+                      class="hidden px-3 py-3.5 text-left text-sm font-semibold text-gray-900 lg:table-cell">butuh</th>
+                    <th scope="col" class="px-3 py-3.5 text-left text-sm font-semibold text-gray-900">kurang</th>
+                    <th scope="col" class="px-3 py-3.5 text-left text-sm font-semibold text-gray-900">stasiunKerja</th>
 
                   </tr>
                 </thead>
@@ -228,6 +227,24 @@
       </div>
     </div>
   </div>
+
+
+  <script>
+    function table() {
+      const xhttp = new XMLHttpRequest()
+
+      xhttp.onload = function() {
+        document.getElementById("table").innerHTML = this.responseText
+      }
+
+      xhttp.open("GET", "dashboard")
+      xhttp.send()
+    }
+
+    setInterval(() => {
+      table()
+    }, 1);
+  </script>
 
 </body>
 </html>
