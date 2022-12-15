@@ -150,7 +150,7 @@
 
             <div class="mt-10 sm:flex sm:items-center">
               <div class="sm:flex-auto">
-                <h1 class="text-xl font-semibold text-gray-900">mat D</h1>
+                <h1 class="text-xl font-semibold text-gray-900">mat butuh</h1>
                 <p class="mt-2 text-sm text-gray-700">A list of all the users in your account including their name,
                   title, email and role.</p>
               </div>
@@ -168,17 +168,53 @@
                     <th scope="col"
                       class="hidden px-3 py-3.5 text-left text-sm font-semibold text-gray-900 lg:table-cell">Quantity</th>
                     <th scope="col" class="px-3 py-3.5 text-left text-sm font-semibold text-gray-900">Unit</th>
-                    <th scope="col" class="px-3 py-3.5 text-left text-sm font-semibold text-gray-900">Arrival Date</th>
+
                   </tr>
                 </thead>
                 <tbody class="divide-y divide-gray-200 bg-white">
-                  @foreach($matD as $mat)
+                  @foreach($matbtuh as $mat)
                   <tr>
-                    <td class="whitespace-nowrap py-4 pl-4 pr-3 text-sm font-medium text-gray-900 sm:pl-6">{{ $mat->purchaseItem }}</td>
-                    <td class="whitespace-nowrap py-4 pl-4 pr-3 text-sm font-medium text-gray-900 sm:pl-6">{{ $mat->merk }}</td>
-                    <td class="whitespace-nowrap py-4 pl-4 pr-3 text-sm font-medium text-gray-900 sm:pl-6">{{ $mat->quantity }}</td>
-                    <td class="whitespace-nowrap py-4 pl-4 pr-3 text-sm font-medium text-gray-900 sm:pl-6">{{ $mat->unit }}</td>
-                    <td class="whitespace-nowrap py-4 pl-4 pr-3 text-sm font-medium text-gray-900 sm:pl-6">{{ $mat->arrivalDate }}</td>
+                    <td class="whitespace-nowrap py-4 pl-4 pr-3 text-sm font-medium text-gray-900 sm:pl-6">{{ $mat->nama }}</td>
+                    <td class="whitespace-nowrap py-4 pl-4 pr-3 text-sm font-medium text-gray-900 sm:pl-6">{{ $mat->butuh }}</td>
+                    <td class="whitespace-nowrap py-4 pl-4 pr-3 text-sm font-medium text-gray-900 sm:pl-6">{{ $mat->kurang }}</td>
+                    <td class="whitespace-nowrap py-4 pl-4 pr-3 text-sm font-medium text-gray-900 sm:pl-6">{{ $mat->stasiunKerja }}</td>
+                  </tr>
+                  @endforeach
+
+                  <!-- More people... -->
+                </tbody>
+              </table>
+            </div>
+            <div class="mt-10 sm:flex sm:items-center">
+              <div class="sm:flex-auto">
+                <h1 class="text-xl font-semibold text-gray-900">mat butuh</h1>
+                <p class="mt-2 text-sm text-gray-700">A list of all the users in your account including their name,
+                  title, email and role.</p>
+              </div>
+            </div>
+            <div
+              class="-mx-4 mt-8 overflow-hidden shadow ring-1 ring-black ring-opacity-5 sm:-mx-6 md:mx-0 md:rounded-lg">
+              <table class="min-w-full divide-y divide-gray-300">
+                <thead class="bg-gray-50">
+                  
+                  <tr>
+                    <th scope="col" class="py-3.5 pl-4 pr-3 text-left text-sm font-semibold text-gray-900 sm:pl-6">rencana mulai
+                    </th>
+                    <th scope="col"
+                      class="hidden px-3 py-3.5 text-left text-sm font-semibold text-gray-900 sm:table-cell">rencana selesai</th>
+                    <th scope="col"
+                      class="hidden px-3 py-3.5 text-left text-sm font-semibold text-gray-900 lg:table-cell">mulai</th>
+                    <th scope="col" class="px-3 py-3.5 text-left text-sm font-semibold text-gray-900">selesai</th>
+                  </tr>
+                </thead>
+                <tbody class="divide-y divide-gray-200 bg-white">
+                  @foreach($oprSiap as $siap)
+                  <tr>
+                    <td class="whitespace-nowrap py-4 pl-4 pr-3 text-sm font-medium text-gray-900 sm:pl-6">{{ $siap->rencanaMulai }}</td>
+                    <td class="whitespace-nowrap py-4 pl-4 pr-3 text-sm font-medium text-gray-900 sm:pl-6">{{ $siap->rencanaSelesai }}</td>
+                    <td class="whitespace-nowrap py-4 pl-4 pr-3 text-sm font-medium text-gray-900 sm:pl-6">{{ $siap->mulai }}</td>
+                    <td class="whitespace-nowrap py-4 pl-4 pr-3 text-sm font-medium text-gray-900 sm:pl-6">{{ $siap->selesai }}</td>
+                    <td class="whitespace-nowrap py-4 pl-4 pr-3 text-sm font-medium text-gray-900 sm:pl-6">{{ $siap->nama }}</td>
                   </tr>
                   @endforeach
 

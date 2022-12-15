@@ -21,11 +21,13 @@ Route::get('/', function () {
 });
 
 Route::get('/dashboard', function () {
-    $matD = DB::table('mat_d_materialstock')->get();
+    $matbtuh = DB::table('cpl_matbutuhopr')->get();
     $oprLayak = DB::table('cpl_oprlayak')->get();
+    $oprSiap = DB::table('cpl_oprsiap')->get();
     return view('dashboard',  [
-        'matD' => $matD,
+        'matbtuh' => $matbtuh,
         'oprLayak' => $oprLayak,
+        'oprSiap' => $oprSiap,
     ]);
 });
 
